@@ -23,7 +23,7 @@ public class Servico {
 
   @Temporal(TemporalType.DATE)
   private Date dataTermino;
-  
+
   private String descricao;
 
   private Double valorServico;
@@ -31,7 +31,7 @@ public class Servico {
   private Double valorPago;
 
   @Temporal(TemporalType.DATE)
-  private Date dataPagamnto;
+  private Date dataPagamento;
 
   private String status; //pendente , realizado, cancelado
 
@@ -91,12 +91,12 @@ public class Servico {
     this.valorPago = valorPago;
   }
 
-  public Date getDataPagamnto() {
-    return dataPagamnto;
+  public Date getDataPagamento() {
+    return dataPagamento;
   }
 
-  public void setDataPagamnto(Date dataPagamnto) {
-    this.dataPagamnto = dataPagamnto;
+  public void setDataPagamento(Date dataPagamento) {
+    this.dataPagamento = dataPagamento;
   }
 
   public String getStatus() {
@@ -106,5 +106,6 @@ public class Servico {
   public void setStatus(String status) {
     this.status = status;
   }
+
 
 }

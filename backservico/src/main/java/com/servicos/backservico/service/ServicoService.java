@@ -13,11 +13,11 @@ public class ServicoService {
 
   @Autowired
   private ServicoRepository servicoRepository;
-  
+
   public List<Servico> buscarTodos(){
     return servicoRepository.findAll();
   }
-  
+
   public List<Servico> buscarServicosPagamentoPendente(){
     return servicoRepository.buscarServicosPagamentoPendente();
   }
@@ -27,7 +27,7 @@ public class ServicoService {
   }
 
   public Servico inserir(Servico servico){
-    if (servico.getValorPago() == null || servico.getValorPago() == 0 || servico.getDataPagamnto() == null) {
+    if (servico.getValorPago() == null || servico.getValorPago() == 0 || servico.getDataPagamento() == null) {
       servico.setStatus("Pendente");
     } else {
       servico.setStatus("Realizado");
@@ -37,7 +37,7 @@ public class ServicoService {
 
   public Servico alterar(Servico servico){
 
-    if (servico.getValorPago() != null && servico.getValorPago() >= 0 || servico.getDataPagamnto() != null) {
+    if (servico.getValorPago() != null && servico.getValorPago() >= 0 || servico.getDataPagamento() != null) {
       servico.setStatus("Realizado");
     }
 

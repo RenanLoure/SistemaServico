@@ -90,50 +90,54 @@ function Servico() {
       <h1>Cadastro de serviços</h1>
       <form onSubmit={handleSubmit}>
         <div className="col-6">
-          {/* <div class="input-container">
-            <input placeholder="Nome" className="input-field" type="text" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.nomeCliente || ''} name="nomeCliente" placeholder="Nome" className="input-field" type="text" />
             <label for="input-field" className="input-label">Nome</label>
             <span className="input-highlight"></span>
-          </div> */}
-          <div>
-            <label className="form-label">Nome do cliente</label>
-            <input onChange={handleChange} value={servico.nomeCliente || ''} type="text" name="nomeCliente" className="form-control" />
           </div>
-          <div>
-            <label className="form-label">Data de início</label>
-            <input onChange={handleChange} value={servico.dataInicio || ''} type="date" name="dataInicio" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.dataInicio || ''} name="dataInicio" className="input-field" type="date" />
+            <label for="input-field" className="input-label">Data de início</label>
+            <span className="input-highlight"></span>
           </div>
-          <div>
-            <label className="form-label">Data de Termino</label>
-            <input onChange={handleChange} value={servico.dataTermino || ''} type="date" name="dataTermino" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.dataTermino || ''} name="dataTermino" className="input-field" type="date" />
+            <label for="input-field" className="input-label">Data de Termino</label>
+            <span className="input-highlight"></span>
           </div>
-          <div>
-            <label className="form-label">Descrição do serviço</label>
-            <input onChange={handleChange} value={servico.descricao || ''} type="text" name="descricao" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.descricao || ''} name="descricao" placeholder="Descrição do serviço" className="input-field" type="text" />
+            <label for="input-field" className="input-label">Descrição do serviço</label>
+            <span className="input-highlight"></span>
           </div>
-          <div>
-            <label className="form-label">Valor do Serviço</label>
-            <input onChange={handleChange} value={servico.valorServico || ''} type="number" name="valorServico" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.valorServico || ''} name="valorServico" placeholder="Valor do Serviço" className="input-field" type="number" />
+            <label for="input-field" className="input-label">Valor do Serviço</label>
+            <span className="input-highlight"></span>
           </div>
-          <div>
-            <label className="form-label">Valor Pago</label>
-            <input onChange={handleChange} value={servico.valorPago || ''} type="number" name="valorPago" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.valorPago || ''} name="valorPago" placeholder="Valor Pago" className="input-field" type="number" />
+            <label for="input-field" className="input-label">Valor Pago</label>
+            <span className="input-highlight"></span>
           </div>
-          <div>
-            <label className="form-label">Data de Pagamento</label>
-            <input onChange={handleChange} value={servico.dataPagamento || ''} type="date" name="dataPagamento" className="form-control" />
+          <div class="input-container">
+            <input onChange={handleChange} value={servico.dataPagamento || ''} placeholder="Data de Pagamento" name="dataPagamento" className="input-field" type="date" />
+            <label for="input-field" className="input-label">Data de Pagamento</label>
+            <span className="input-highlight"></span>
           </div>
           <br />
-          <input type="submit" className='btn btn-success' value="Cadastrar" />
+          <input type="submit" className='button' value="Cadastrar" />
 
         </div>
       </form>
       <hr /><hr />
 
-
-      <button onClick={buscarTodos} className='btn btn-primary'>Listar todos</button>
-      <button onClick={buscarPagamentosPendentes} className='btn btn-secondary'>Pagamentos Pendentes</button>
-      <button onClick={buscarCancelados} className='btn btn-success'>Serviços Cancelados</button>
+      <br />
+      <button onClick={buscarTodos} className='listar'>Listar todos</button>&nbsp;&nbsp;
+      <button onClick={buscarPagamentosPendentes} className='listarPendentes'>Pagamentos Pendentes</button>&nbsp;&nbsp;
+      <button onClick={buscarCancelados} className='ListarCancelados'>Serviços Cancelados</button>&nbsp;&nbsp;
+      <br />
+      <br />
 
       <table class="table">
         <thead>
@@ -155,12 +159,12 @@ function Servico() {
                 <td>{serv.status}</td>
                 <td>
                   {serv.status != 'cancelado' &&
-                    <button onClick={() => excluir(serv.id)} className='btn btn-danger'>Excluir</button>
+                    <button onClick={() => excluir(serv.id)} className='excluir'>Excluir</button>
                   }&nbsp;&nbsp;
                   {serv.status != 'cancelado' &&
-                    <button onClick={() => setServico(serv)} className='btn btn-primary'>Alterar</button>
+                    <button onClick={() => setServico(serv)} className='listar'>Alterar</button>
                   }&nbsp;&nbsp;
-                  <button onClick={() => cancelar(serv.id)} className='btn btn-warning'>Cancelar</button>
+                  <button onClick={() => cancelar(serv.id)} className='ListarCancelados'>Cancelar</button>
                 </td>
               </tr>
             ))}

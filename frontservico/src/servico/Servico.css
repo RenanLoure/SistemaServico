@@ -48,3 +48,183 @@
 .input-field:focus + .input-label + .input-highlight {
   width: 100%;
 }
+
+.button {
+  --color: #081a15;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+ }
+
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+
+ .button:hover {
+  color: rgb(2, 143, 77);
+ }
+
+ .button:active {
+  filter: brightness(.8);
+ }
+
+ .listar {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.listar:hover {
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.listar:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.listarPendentes {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #25d482;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.listarPendentes:hover {
+  background-color: #25d482;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.listarPendentes:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.ListarCancelados {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #dadd0f;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.ListarCancelados:hover {
+  background-color: #dadd0f;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.ListarCancelados:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.listarPendentes {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #25d482;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.listarPendentes:hover {
+  background-color: #25d482;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.listarPendentes:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.excluir {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #d10c0c;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.excluir:hover {
+  background-color: #d10c0c;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.excluir:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
